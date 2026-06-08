@@ -1,19 +1,11 @@
-function CourseCard({
-  image,
-  name,
-  description,
-  price,
-}) {
+function CourseCard({ course }) {
   return (
-    <div className="course">
-      <img src={image} alt={name} />
-
+    <div className={`course ${course.soldOut ? "soldOut" : ""}`}>
+      <img src={course.image} alt={course.name} />
       <div className="course-info">
-        <h3>{name}</h3>
-
-        <p>{description}</p>
-
-        <span>${price}.00</span>
+        <h3>{course.name}</h3>
+        <p>{course.description}</p>
+        <span>{course.soldOut ? "SoldOut" : `${course.price}.00`}</span>
       </div>
     </div>
   );

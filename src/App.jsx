@@ -1,4 +1,4 @@
-import {courses} from "./data/courses";
+import { courses } from "./data/courses";
 import CourseCard from "./components/CourseCard";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -10,10 +10,7 @@ function App() {
         {courses.map((course) => (
           <CourseCard
             key={course.id}
-            image={course.image}
-            name={course.name}
-            description={course.description}
-            price={course.price}
+            course={course}
           />
         ))}
       </div>
